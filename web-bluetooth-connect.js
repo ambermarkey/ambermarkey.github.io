@@ -22,7 +22,8 @@ button.addEventListener("click", async () => {
     // Request the Bluetooth device through browser
     const device = await navigator.bluetooth.requestDevice({
       optionalServices: ["battery_service", "device_information","2bc61341-2291-4a80-bc74-21bf4c6de00f"],
-      acceptAllDevices: true,
+      //acceptAllDevices: true,
+      filters: [{services: ['2bc61341-2291-4a80-bc74-21bf4c6de00f']}],
     });
 
     // Connect to the GATT server
