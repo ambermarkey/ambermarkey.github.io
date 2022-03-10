@@ -48,6 +48,7 @@ button.addEventListener("click", async () => {
     const batteryLevel = await batteryLevelCharacteristic.readValue();
     const batteryPercent = await batteryLevel.getUint8(0);
     const accelData = await accelerometerCharacteristic.readValue();
+    const accelValue = await accelData.getInt16();
     
 
     // Getting device information
@@ -76,7 +77,7 @@ button.addEventListener("click", async () => {
       details.innerHTML = `
       Device Name - ${deviceName}<br />
       Battery Level - ${batteryPercent}%<br />
-      Accel Data - ${accelData}<br />
+      Accel Data - ${accelValue}<br />
       Device Information:
       <ul>
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
