@@ -21,7 +21,7 @@ button.addEventListener("click", async () => {
   try {
     // Request the Bluetooth device through browser
     const device = await navigator.bluetooth.requestDevice({
-      optionalServices: ["battery_service", "device_information"],
+      optionalServices: ["battery_service", "device_information","2bc61341-2291-4a80-bc74-21bf4c6de00f"],
       acceptAllDevices: true,
     });
 
@@ -33,14 +33,22 @@ button.addEventListener("click", async () => {
     // Getting the services we mentioned before through GATT server
     const batteryService = await server.getPrimaryService("battery_service");
     const infoService = await server.getPrimaryService("device_information");
+    const accelerometerservice = await server.getPrimaryService('2bc61341-2291-4a80-bc74-21bf4c6de00f');
+
 
     // Getting the current battery level
     const batteryLevelCharacteristic = await batteryService.getCharacteristic(
       "battery_level"
     );
+
+    const accelerometerCharacteristic = await accelerometerservice.getCharacteristic(
+        '0a7b4fdf-c53d-4b17-9163-ece1d8db5ef5'
+    );
     // Convert recieved buffer to number
     const batteryLevel = await batteryLevelCharacteristic.readValue();
     const batteryPercent = await batteryLevel.getUint8(0);
+    const accelData = await accelerometerCharacteristic.readValue();
+    
 
     // Getting device information
     // We will get all characteristics from device_information
@@ -68,6 +76,7 @@ button.addEventListener("click", async () => {
       details.innerHTML = `
       Device Name - ${deviceName}<br />
       Battery Level - ${batteryPercent}%<br />
+      Accel Data - ${accelData}<br />
       Device Information:
       <ul>
         ${infoValues.map((value) => `<li>${value}</li>`).join("")}
