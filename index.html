@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Strive Bluetooth Test</title>
+    <title>IMU Stream Strive Bluetooth Test</title>
   </head>
   <body>
-    <div id="__FullPage">
-      <div id="__Layout">
-        <header class="site-header">
-          <div class="nav-holder">
-            <div class="menu-open-holder menu-icon">
-              <img src="./navbar_icon.png" alt="Menu Open"> == $0
-            </div>
-            <nav role="navigation" class="main-navigation">
-              <ul>
-                <li><a href="./About_Us">About Us</a></li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-      </div>
-
-    </div>
-    <h1> Demonstrating Bluetooth Browser Connectivity </h1>
-      <p>To connect to a Bluetooth Device and retrieve certain information, press the button below</p>
-      <button id="getDetails"> Get Device Details</button>
-      <div id="details"></div>
-      <script src="web-bluetooth-connect.js"></script>
-
+    <header>
+      <h1> Demonstrating Bluetooth Browser Connectivity </h1>
+    </header>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
+      <section id="Introduction">
+        <article>
+          <h2>Introduction</h2>
+          <p>Connecting via bluetooth in a browser can be rather <em>tricky</em>. This website has been developed to demonstrate the possibilities of connecting to an IMU via Bluetooth.</p>
+          <h3>History of Web Bluetooth</h3>
+          <p>Browser based bluetooth connectivity is a rather new feature, developed by [TK]. It's a very important evolution in the capabilities of bluetooth as it expands connectivity more broadly.</p>
+          <aside>
+            <p>Enabling people to connect devices via their Browser Bluetooth opens a whole new world of data visualization and processing.</p>
+          </aside>
+        </article>
+      </section>
+      <section id="Connect"></section>
+        <article>
+          <h2>Connecting to a device via your Browser</h2>
+          <p>Now we get to the super fun part! I have written a javascript script that will seek nearby bluetooth devices and the user is instructed to select one device. The browser will connect and pull information about that device and display that information on this page. To connect to a Bluetooth Device and retrieve certain information, press the button below.</p>
+        </article>
+        <button id="getDetails"> Get Device Details</button>
+        <div id="details"></div>
+        <script src="web-bluetooth-connect.js"></script>
+      </section>
+    </main>
     <footer>
       <small> Developed on Tutorials by </small>
     </footer>
