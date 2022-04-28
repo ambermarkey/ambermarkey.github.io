@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IMU Stream Strive Bluetooth Test</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <h1>Browser Bluetooth</h1>
+    </header>
+    <main>
+      <nav class="nav">
+        <div class="container">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./About_Us.html">About</a></li>
+            <li><a href="./resume.html">Resume</a></li>
+          </ul>
+        </div>
+      </nav>
+      <section id="Introduction">
+        <article>
+          <h2>Introduction</h2>
+          <p>Connecting via bluetooth in a browser can be rather <em>tricky</em>. This website has been developed to demonstrate the possibilities of connecting to an IMU via Bluetooth.</p>
+          <h3>History of Web Bluetooth</h3>
+          <p>Browser based bluetooth connectivity is a rather new feature, developed by [TK]. It's a very important evolution in the capabilities of bluetooth as it expands connectivity more broadly.</p>
+          <aside>
+            <p>Enabling people to connect devices via their Browser Bluetooth opens a whole new world of data visualization and processing.</p>
+          </aside>
+        </article>
+      </section>
+      <section id="Connect"></section>
+        <article>
+          <h2>Connecting to a device via your Browser</h2>
+          <p>Now we get to the super fun part! I have written a javascript script that will seek nearby bluetooth devices and the user is instructed to select one device. The browser will connect and pull information about that device and display that information on this page. To connect to a Bluetooth Device and retrieve certain information, press the button below.</p>
+        </article>
+        <button id="getDetails"> Get Device Details</button>
+        <div id="details"></div>
+        <script src="web-bluetooth-connect.js"></script>
+      </section>
+      <section id="Subscribe" class="jumbotron">
+        <div class="container">
+          <h2>Stay in Touch!</h2>
+          <p>Subscribe for Updates from the Squad</p>
+          <form action="" method="get" class="form-example">
+            <div class="form-example">
+              <label for="name">Enter your name: </label>
+              <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-example">
+              <label for="email">Enter your email: </label>
+              <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-example">
+              <input type="submit" value="Subscribe!">
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <p>Developed on Tutorials by CodeAcademy, internetingishard.com, and Mozilla Developer Network (MDN)</p>
+      </div>
+    </footer>
+  </body>
+</html>
