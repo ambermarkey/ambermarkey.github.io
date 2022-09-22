@@ -1,12 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "..\\..\\..\\HelloWorld"
-		},
-		{
-			"name": "3489-strive-g2",
-			"path": "..\\..\\..\\Strive G2\\3489-strive-g2"
+			"path": "."
 		}
-	],
-	"settings": {}
+	]
 }
